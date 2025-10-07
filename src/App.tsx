@@ -1,18 +1,21 @@
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
+import { Routes, Route } from "react-router-dom";
+import Dashboard from "./pages/Dashboard";
+import Transactions from "./pages/Transactions";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
+import MainLayout from "./layouts/MainLayout";
 
 function App() {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50">
-      <Card className="p-6">
-        <CardContent>
-          <h1 className="text-2xl font-semibold mb-4 text-gray-800">
-            Finance Dashboard
-          </h1>
-          <Button>Get Started</Button>
-        </CardContent>
-      </Card>
-    </div>
+    <Routes>
+      <Route path="/login" element={<Login />} />
+      <Route path="/register" element={<Register />} />
+
+      <Route element={<MainLayout />}>
+        <Route path="/" element={<Dashboard />} />
+        <Route path="/transactions" element={<Transactions />} />
+      </Route>
+    </Routes>
   );
 }
 
