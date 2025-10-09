@@ -7,7 +7,7 @@ export default function MainLayout() {
         <h1 className="text-xl font-bold mb-6">Finance Dashboard</h1>
         <nav className="flex flex-col gap-2">
           <NavLink
-            to="/"
+            to="/dashboard"
             className={({ isActive }) =>
               isActive ? "text-blue-600 font-semibold" : "text-gray-600"
             }
